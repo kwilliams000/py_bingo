@@ -175,11 +175,8 @@ class Game:
             if self.check_winner(): continue
 
         print('\n\nThanks for playing!')
-        time.sleep(5)
-        try:
-            raise KeyboardInterrupt
-        except KeyboardInterrupt:
-            input('Press any key to close')
+        time.sleep(6)
+
 
     def get_board_size(self) -> None:
         while self.board_size == 0:
