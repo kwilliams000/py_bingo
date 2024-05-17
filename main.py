@@ -1,7 +1,7 @@
 '''Bingo game'''
 
 import random
-import timeit
+import time
 
 class IncorrectCPUValue(Exception):
     '''Raised when the input value is outside the range 0 and 19 inclusive'''
@@ -175,6 +175,11 @@ class Game:
             if self.check_winner(): continue
 
         print('\n\nThanks for playing!')
+        time.sleep(5)
+        try:
+            raise KeyboardInterrupt
+        except KeyboardInterrupt:
+            input('Press any key to close')
 
     def get_board_size(self) -> None:
         while self.board_size == 0:
